@@ -1,5 +1,6 @@
 package com.android.sample.espressouitestsample.signup;
 
+import android.os.SystemClock;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
@@ -52,6 +53,8 @@ public class SignUpScreenTest {
 
         //click the signup button
         onView(withId(R.id.button_sign_up)).perform(click());
+
+        SystemClock.sleep(7000);
 
         //check that we can see the success screen with success message
         String successString = InstrumentationRegistry.getTargetContext().getString(R.string.text_sign_up_successful);
